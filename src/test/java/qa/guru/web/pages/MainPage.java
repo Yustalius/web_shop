@@ -3,6 +3,7 @@ package qa.guru.web.pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Disabled;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,7 +17,7 @@ public class MainPage {
             cartButton = $(".ico-cart"),
             cartQuantity = $("span.cart-qty");
     private static final ElementsCollection
-            products = $$("div.product-item");
+            products = $$("h2.product-title");
 
     @Step("Открыть главную страницу")
     public static MainPage openMainPage() {
@@ -51,8 +52,9 @@ public class MainPage {
         return this;
     }
 
+    @Disabled
     public int getProductIdWithNumber(int productNumber) {
-        return Integer.parseInt(products.get(productNumber-1).getAttribute("data-productid"));
+        return Integer.parseInt(products.get(productNumber-1).getAttribute("data-productid")); // todo change css selector
     }
 
     public String getProductName(int productId) {

@@ -48,7 +48,7 @@ public class CartTests extends TestBase {
     }
 
     @Test
-    @Tags({@Tag("UI"), @Tag("Positive")})
+    @Tags({@Tag("UI"), @Tag("Positive"), @Tag("CART"), @Tag("jopa")})
     @DisplayName("Добавление продукта в корзину")
     @Severity(SeverityLevel.BLOCKER)
     public void addToCartTest() {
@@ -70,7 +70,7 @@ public class CartTests extends TestBase {
     }
 
     @Test
-    @Tags({@Tag("UI"), @Tag("API"), @Tag("Positive")})
+    @Tags({@Tag("UI"), @Tag("API"), @Tag("Positive"), @Tag("CART")})
     @DisplayName("Добавление продуктов в корзину с помощью API")
     @Severity(SeverityLevel.BLOCKER)
     public void addToCartWithApiTest() {
@@ -91,7 +91,7 @@ public class CartTests extends TestBase {
     }
 
     @Test
-    @Tags({@Tag("UI"), @Tag("Positive")})
+    @Tags({@Tag("UI"), @Tag("Positive"), @Tag("CART")})
     @DisplayName("Проверка очистки корзины")
     @Severity(SeverityLevel.BLOCKER)
     public void clearCartTest() {

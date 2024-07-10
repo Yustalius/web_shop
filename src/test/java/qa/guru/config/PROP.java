@@ -15,7 +15,7 @@ public class PROP {
         @Key("browserSize")
         String getBrowserSize();
 
-        @Key("remoteOrLocalRun")
+        @Key("remoteOrLocal")
         String getRemoteOrLocal();
 
         @Key("remoteUrl")
