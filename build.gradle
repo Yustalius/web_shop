@@ -30,7 +30,7 @@ tasks.withType(JavaCompile) {
 }
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:6.17.2",
+            "com.codeborne:selenide:6.11.2",
             "org.junit.jupiter:junit-jupiter:5.9.1",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
