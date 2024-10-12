@@ -29,8 +29,8 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 dependencies {
-    testImplementation (
-            "com.codeborne:selenide:6.11.2",
+    testImplementation(
+            "com.codeborne:selenide:6.17.2",
             "org.junit.jupiter:junit-jupiter:5.9.1",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
@@ -38,6 +38,7 @@ dependencies {
             'io.rest-assured:rest-assured:5.4.0',
             "com.fasterxml.jackson.core:jackson-databind:2.17.1",
             "org.assertj:assertj-core:3.25.3",
+            "com.github.javafaker:javafaker:1.0.2",
             "com.github.javafaker:javafaker:1.0.2",
             "org.aeonbits.owner:owner:1.0.4"
     )
@@ -61,8 +62,8 @@ task cart(type: Test) {
     }
 }
 
-/*
 
+/*
 test {
     systemProperties(System.getProperties())
     useJUnitPlatform {
@@ -71,13 +72,14 @@ test {
         }
     }
 
-    if (System.getProperty("threads") != null && !System.getProperty("threads").isEmpty()) {
-        systemProperties += [
-                'junit.jupiter.execution.parallel.enabled'                 : true,
-                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
-                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
-        ]
-    }
-}*/
+
+    systemProperties += [
+            'junit.jupiter.execution.parallel.enabled'                 : true,
+            'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+            'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+            'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+            'junit.jupiter.execution.parallel.config.fixed.parallelism': 20
+    ]
+
+}
+*/
