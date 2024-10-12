@@ -26,10 +26,10 @@ public class MainPage {
         return new MainPage();
     }
 
-    public MainPage clickOnLoginButton() {
+    public LoginPage clickOnLoginButton() {
         loginButton.click();
 
-        return this;
+        return new LoginPage();
     }
 
     public MainPage verifyUserEmailIsShowed(String userEmail) {
